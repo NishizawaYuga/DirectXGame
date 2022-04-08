@@ -6,7 +6,7 @@ using namespace DirectX;
 
 GameScene::GameScene() {}
 
-GameScene::~GameScene() {}
+GameScene::~GameScene() { delete sprite_; }
 
 void GameScene::Initialize() {
 
@@ -14,9 +14,25 @@ void GameScene::Initialize() {
 	input_ = Input::GetInstance();
 	audio_ = Audio::GetInstance();
 	debugText_ = DebugText::GetInstance();
+
+	//ファイル名を指定してテクスチャを読み込む
+	textureHandle_ = TextureManager::Load("question.png");
+
+	//スプライトの生成
+	sprite_ = Sprite::Create(textureHandle_, {100, 50});
 }
 
-void GameScene::Update() {}
+void GameScene::Update() {
+//スプライトの今の座標を取得
+	XMFLOAT2 position = sprite_->GetPosition();
+
+//座標を{2,0}移動
+	position.x += 2.0f;
+	position.y += 1.0f;
+
+//移動した座標をスプライトに反映
+	sprite_->SetPosition(position);
+}
 
 void GameScene::Draw() {
 
@@ -30,6 +46,7 @@ void GameScene::Draw() {
 	/// <summary>
 	/// ここに背景スプライトの描画処理を追加できる
 	/// </summary>
+	sprite_->Draw();//Draw()はPreDraw()とPosrDraw()の間に絶対書くこと
 
 	// スプライト描画後処理
 	Sprite::PostDraw();

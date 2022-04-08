@@ -32,6 +32,15 @@ void GameScene::Initialize() {
 
 	//ビュープロジェクションの初期化
 	viewProjection_.Initialize();
+
+	//サウンドデータの読み込み
+	soundDataHandle_ = audio_->LoadWave("se_sad03.wav");
+
+	//音声再生
+	audio_->PlayWave(soundDataHandle_);
+
+	//音声再生
+	voiceHandle_ = audio_->PlayWave(soundDataHandle_, true);
 }
 
 void GameScene::Update() {
@@ -44,6 +53,12 @@ void GameScene::Update() {
 
 //移動した座標をスプライトに反映
 	sprite_->SetPosition(position);
+
+//スペースキーを押した瞬間
+	if (input_->TriggerKey(DIK_SPACE)) {
+	//音声停止
+		audio_->StopWave(voiceHandle_);
+	}
 }
 
 void GameScene::Draw() {

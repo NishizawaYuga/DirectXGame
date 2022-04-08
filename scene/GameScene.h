@@ -48,6 +48,12 @@ class GameScene {
 	Audio* audio_ = nullptr;
 	DebugText* debugText_ = nullptr;
 
+	//テクスチャハンドル
+	uint32_t textureHandle_ = 0;
+
+	//スプライト
+	Sprite* sprite_ = nullptr; 
+
 	/// <summary>
 	/// ゲームシーン用
 	/// </summary>

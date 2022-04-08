@@ -54,6 +54,15 @@ class GameScene {
 	//スプライト
 	Sprite* sprite_ = nullptr; 
 
+	//3Dモデル
+	Model* model_ = nullptr;
+
+	//ワールドトランスフォーム
+	WorldTransform worldTransform_;
+
+	//ビュープロジェクション
+	ViewProjection viewProjection_;
+
 	/// <summary>
 	/// ゲームシーン用
 	/// </summary>

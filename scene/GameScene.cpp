@@ -40,7 +40,7 @@ void GameScene::Initialize() {
 	//audio_->PlayWave(soundDataHandle_);
 
 	//音声再生
-	voiceHandle_ = audio_->PlayWave(soundDataHandle_, true,0.01f);
+	voiceHandle_ = audio_->PlayWave(soundDataHandle_, true, 0.01f);
 }
 
 void GameScene::Update() {

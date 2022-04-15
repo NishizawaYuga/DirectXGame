@@ -51,9 +51,6 @@ class GameScene {
 	//テクスチャハンドル
 	uint32_t textureHandle_ = 0;
 
-	//スプライト
-	Sprite* sprite_ = nullptr; 
-
 	//3Dモデル
 	Model* model_ = nullptr;
 
@@ -63,14 +60,10 @@ class GameScene {
 	//ビュープロジェクション
 	ViewProjection viewProjection_;
 
-	//サウンドデータハンドル
-	uint32_t soundDataHandle_ = 0;
-	
-	//音声再生ハンドル
-	uint32_t voiceHandle_ = 0;
-
 	//値を表示したい変数
-	int32_t value_ = 0;
+	int32_t scale = 0;
+	int32_t rotation = 0;
+	int32_t translation = 0;
 
 	/// <summary>
 	/// ゲームシーン用

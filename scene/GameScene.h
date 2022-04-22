@@ -1,8 +1,8 @@
 ﻿#pragma once
 
 #include "Audio.h"
-#include "DirectXCommon.h"
 #include "DebugText.h"
+#include "DirectXCommon.h"
 #include "Input.h"
 #include "Model.h"
 #include "SafeDelete.h"
@@ -51,17 +51,17 @@ class GameScene {
 	//テクスチャハンドル
 	uint32_t textureHandle_ = 0;
 
-	//3Dモデル
+	// 3Dモデル
 	Model* model_ = nullptr;
 
 	//ワールドトランスフォーム
-	WorldTransform worldTransform_;
+	WorldTransform worldTransform_[100];
 
 	//ビュープロジェクション
-	ViewProjection viewProjection_[3];
+	ViewProjection viewProjection_;
 
-	//視点変更用変数
-	int cameraNumber = 0;
+	//カメラ上方向の角度
+	float viewAngle = 0.0f;
 
 	/// <summary>
 	/// ゲームシーン用
